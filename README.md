@@ -1,1 +1,1 @@
-# mini-project
+# Solving a Pentaminos Puzzle
