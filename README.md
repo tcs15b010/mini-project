@@ -1,1 +1,1 @@
-# Solving a Pentaminos Puzzle
+# Proving theorems in Coq
