@@ -1,0 +1,17 @@
+(*proof for peirce law which says that (((P→Q)→P)→P) *)
+
+Definition peirce := forall (p q : Prop),
+  ((p -> q) -> p) -> p.
+
+Definition lem := forall p, p \/ -p.
+
+Theorem peirce_equiv_lem: peirce <-> lem.
+Proof.
+  unfold peirce, lem.
+  firstorder.
+  apply H with (q := - (p \/ -p)).
+  firstorder.
+  destruct (H p).
+  assumption.
+  tauto.
+Qed.
