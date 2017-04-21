@@ -2,7 +2,7 @@
 
 Section PropositionalLogic.
 Variables P Q R : Prop.
-Theorem distr and or : (P ∧ Q) ∨ (P ∧ R) → P ∧ (Q ∨ R).
+Theorem or_logic : (P ∧ Q) ∨ (P ∧ R) → P ∧ (Q ∨ R).
 intros H.
 destruct H as [H1 | H2 ].
 split.
