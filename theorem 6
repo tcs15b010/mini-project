@@ -1,0 +1,30 @@
+Theorem andb_is_and : (forall a b, Is_true (andb a b) <-> Is_true a /\ Is_true b).
+Proof.
+  intros a b.
+  unfold iff.
+  refine (conj _ _).
+  intros H.                       (*andb -> /\*)
+    case a, b.
+    simpl.                        (*suppose a,b is true,true*)
+      exact (conj I I).
+      simpl in H.                 (*suppose a,b is true,false*)
+      case H.
+      simpl in H.                 (*suppose a,b is false,true*)
+      case H.
+       simpl in H.
+      case H.                     (*suppose a,b is false,false*)
+       intros H.    (*/\ -> andb*)
+    case a,b.
+     simpl.                       (*suppose a,b is true,true*)
+      exact I.
+       simpl in H.                 (*suppose a,b is true,false*)
+      destruct H as [ A B].
+      case B.
+       simpl in H.                 (*suppose a,b is false,true*)
+      destruct H as [ A B].
+      case A.
+       simpl in H.                  (*suppose a,b is false,false*)
+      destruct H as [ A B].
+      case A.
+      
+      Qed.
